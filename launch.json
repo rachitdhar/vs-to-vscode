@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Project_1",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-project1",
+      "program": "${workspaceFolder}/<PATH_TO_PROJECT_1_.dll>",
+      "cwd": "${workspaceFolder}/<PROJECT_1_DIRECTORY_PATH>",
+      "args": ["--launch-profile", "<PROJECT_1>"], 
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    },
+    {
+      "name": "Project_2",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:azureFunctions.pickProcess}",
+      "preLaunchTask": "func-project2"
+    },
+    {
+      "name": "Clean Solution",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "Clean Solution",
+      "program": "dotnet",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopAtEntry": false
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Project_1 + Project_2",
+      "configurations": [
+        "Project_1",
+        "Project_2"
+      ],
+      "stopAll": true
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-project1",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/<PROJECT_1_DIRECTORY_PATH>/<PROJECT_1>.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "func-project2",
+      "type": "shell",
+      "command": "func host start",
+      "isBackground": true,
+      "problemMatcher": "$func-watch",
+      "options": {
+        "cwd": "${workspaceFolder}/<PROJECT_2_DIRECTORY_PATH>",
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      }
+    },
+    {
+      "label": "Clean Solution",
+      "type": "shell",
+      "command": "dotnet clean ${workspaceFolder}/<PATH_TO_.sln>",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "new",
+        "clear": true
+      }
+    }
+  ]
+}
