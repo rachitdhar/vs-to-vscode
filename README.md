@@ -14,9 +14,9 @@ These files are given in the repo.
 **Note**: "Clean Solution" will show up as an option in the Run and Debug menu list.
 Alternatively, clean solution can be done directly by running the command:
 
-'''
+```
 dotnet clean ./<PATH_TO_.sln>
-'''
+```
 
 at the root directory path.
 
